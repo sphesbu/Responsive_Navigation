@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation</title>
+    <style>
+        body{
+            margin: 0;
+
+        }
+        .main_menu ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .main_menu ul li{
+            float: right;
+            margin: 5px;
+            padding: 10px;;
+            cursor: pointer;
+        }
+        .Responsive_menu ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: none;
+        }
+        .Responsive_menu ul li{
+            text-align: center;
+            margin: 40px 0;
+        }
+        .menu_icn b{
+            display: block;
+            background-color: #000;
+            width: 30px;
+            height: 4px;
+            margin: 5px;
+        }
+        .menu_icn{
+            cursor: pointer;
+            display: none;
+        }
+        @media(max-width: 500px){
+            .main_menu{
+                display: none;
+            }
+            .menu_icn{
+                display: block;
+            }
+            .Responsive_menu ul{
+                display: block;
+            }
+            .Responsive_menu ul li{
+                cursor: pointer;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="main_menu">
+          
+            <ul>
+                <li>Home</li>
+                <li>Gallery</li>
+                <li>contact</li>
+                <li>About</li>
+            </ul>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="menu_icn" onclick="click_Me()">
+            <b></b>
+            <b></b>
+            <b></b>
+        </div>
+        <div class="Responsive_menu" id="navbar">
+            <ul>
+                <li>Home</li>
+                <li>Gallery</li>
+                <li>contact</li>
+                <li>About</li>
+            </ul>
+        </div>
+    </header>
+    <script>
+        function click_Me(){
+            var navbar = document.getElementById('navbar');
+             if(navbar.style.display === "none"){
+                navbar.style.display = "block";
+             } else{
+                navbar.style.display = "none"
+             }
+        }
+    </script>
+</body>
+</html>
